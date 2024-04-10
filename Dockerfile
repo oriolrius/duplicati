@@ -1,4 +1,5 @@
 FROM duplicati/duplicati:latest
+LABEL org.opencontainers.image.source="https://github.com/oriolrius/duplicati"
 
 RUN apt-get update && \
     apt-get install -y logrotate && \
