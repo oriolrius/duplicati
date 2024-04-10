@@ -17,7 +17,11 @@ There is a docker-compose file in the repository that you can use to start the c
 You can also use the following command to start the container: (this is how I use it)
 
 ```bash
-docker run -d --name duplicati -v /:/mnt -v /backup:/backup -v ./data:/data --network host ghcr.io/oriolrius/duplicati
+docker run -d --name duplicati \
+  -v /:/mnt -v /backup:/backup \
+  -v ./data:/data \
+  --network host \
+  ghcr.io/oriolrius/duplicati
 ```
 
 - The `-v /:/mnt` host filesystem data; data to backup (data source).
