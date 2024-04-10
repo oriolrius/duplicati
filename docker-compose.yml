@@ -1,0 +1,12 @@
+name: duplicati
+services:
+  duplicati:
+    container_name: duplicati
+    image: ghcr.io/oriolrius/duplicati
+    volumes:
+    - /:/mnt
+    - /backup:/backup
+    - ./data:/data
+    restart: unless-stopped
+    build: .
+    network_mode: host
