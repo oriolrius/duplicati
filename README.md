@@ -12,7 +12,9 @@ This image is based on the official duplicati image and adds support for docker 
 
 ## Usage
 
-There is a docker-compose file in the repository that you can use to start the container. You can also use the following command to start the container:
+There is a docker-compose file in the repository that you can use to start the container. 
+
+You can also use the following command to start the container: (this is how I use it)
 
 ```bash
 docker run -d --name duplicati -v /:/mnt -v /backup:/backup -v ./data:/data --network host ghcr.io/oriolrius/duplicati
@@ -21,7 +23,9 @@ docker run -d --name duplicati -v /:/mnt -v /backup:/backup -v ./data:/data --ne
 - The `-v /:/mnt` host filesystem data; data to backup (data source).
 - The `-v /backup:/backup` volume is the target backup directory.
 - The `-v ./data:/data` volume is duplicati configuration and database.
-- The `--network host` is used to allow the container to access the host network. (All those parameters are optional. I shared them just for helping other about how do I use it).
+- The `--network host` is used to allow the container to access the host network. 
+
+**NOTE**: All those parameters are optional. I shared them just for helping other about how do I use it.
 
 ## Build
 
