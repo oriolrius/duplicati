@@ -23,6 +23,23 @@ docker run -d --name duplicati -v /:/mnt -v /backup:/backup -v ./data:/data --ne
 - The `-v ./data:/data` volume is duplicati configuration and database.
 - The `--network host` is used to allow the container to access the host network. (All those parameters are optional. I shared them just for helping other about how do I use it).
 
+## Build
+
+It uses github workflows to build the image. You can also build the image locally using the following command:
+
+```bash
+docker build -t ghcr.io/oriolrius/duplicati .
+
+or 
+
+docker compose build
+```
+
+## Greatings
+
+This image is based on the work of [duplicati](https://github.com/duplicati/duplicati) and [logrotate](https://github.com/logrotate/logrotate). 
+
+Thank you for your work!
 
 ## License
 
