@@ -3,10 +3,14 @@ services:
   duplicati:
     container_name: duplicati
     image: ghcr.io/oriolrius/duplicati
+    env_file:
+    - .env
     volumes:
     - /:/mnt
     - /backup:/backup
     - ./data:/data
-    restart: unless-stopped
+    - .${DUPLICATI__IMPORT_CONFIG:-/import}:/import
+    - ./files/entrypoint.sh:/entrypoint.sh
+    #restart: unless-stopped
     build: .
     network_mode: host

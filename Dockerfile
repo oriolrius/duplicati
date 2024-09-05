@@ -2,7 +2,7 @@ FROM duplicati/duplicati:latest
 LABEL org.opencontainers.image.source="https://github.com/oriolrius/duplicati"
 
 RUN apt-get update && \
-    apt-get install -y logrotate && \
+    apt-get install -y logrotate bash && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -12,4 +12,4 @@ COPY files/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "/entrypoint.sh"]
