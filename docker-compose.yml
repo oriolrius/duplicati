@@ -10,7 +10,6 @@ services:
     - /backup:/backup
     - ./data:/data
     - .${DUPLICATI__IMPORT_CONFIG:-/import}:/import
-    - ./files/entrypoint.sh:/entrypoint.sh
-    #restart: unless-stopped
+    restart: unless-stopped
     build: .
     network_mode: host
