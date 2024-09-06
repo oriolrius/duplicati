@@ -39,7 +39,7 @@ while true; do
 done &
 
 # parse env vars
-[ -n "${DUPLICATI__WEBSERVICE_PASSWORD}" ] && WEBSERVICE_PASSWORD="--webservice-password='${DUPLICATI__WEBSERVICE_PASSWORD}'"
+[ -n "${DUPLICATI__WEBSERVICE_PASSWORD}" ] && WEBSERVICE_PASSWORD="--webservice-password=${DUPLICATI__WEBSERVICE_PASSWORD}"
 [ "${DUPLICATI__UNENCRYPTED_DATABASE,,}" == "true" ] && UNENCRYPTED_DATABASE="--unencrypted-database"
 [ -z "${DUPLICATI__DEBUG_LEVEL}" ] && DUPLICATI__DEBUG_LEVEL="Information"
 ARGS="${UNENCRYPTED_DATABASE} ${WEBSERVICE_PASSWORD} --webservice-interface=any --webservice-port=8200 --log-file=/backup/duplicati.log --log-level=${DUPLICATI__DEBUG_LEVEL} --log-retention=1M"
