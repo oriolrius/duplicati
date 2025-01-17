@@ -1,3 +1,7 @@
+v2.0.1 - 2025-01-17 - upgrade to 2.1.0.107
+  - many changes in how duplicati works
+  - some relevant entrypoint.sh changes
+
 v2.0.0 - 2024-09-04 - Duplicati 2.0.8.1_beta_2024-05-07 with config importer
 
 v1.2.0 - 2024-09-03 -  Duplicati 2.0.8.1_beta_2024-05-07
