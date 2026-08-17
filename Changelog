@@ -1,3 +1,7 @@
+v2.0.3 - 2026-08-17 - upgrade to 2.3.0.4
+  - base image bumped from 2.1.0.107 to 2.3.0.4 (stable, .NET 10)
+  - server config DB migrates 6 -> 11 and job DBs 12 -> 19 on first start
+
 v2.0.2 - 2025-01-17 - upgrade to 2.1.0.107
   - many changes in how duplicati works
   - some relevant entrypoint.sh changes
