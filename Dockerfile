@@ -1,4 +1,4 @@
-FROM duplicati/duplicati:2.1.0.107
+FROM duplicati/duplicati:2.3.0.4
 LABEL org.opencontainers.image.source="https://github.com/oriolrius/duplicati"
 
 RUN apt-get update && \
