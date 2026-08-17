@@ -19,7 +19,8 @@ function import_configs() {
                 echo "Checking $file"
                 if [ -f "$file" ]; then
                     echo "Importing config from $file"
-                    echo /opt/duplicati/duplicati-server-util import "$file" ${DUPLICATI__WEBSERVICE_PASSWORD} --import-metadata --server-datafolder /data/Duplicati
+                    # do not echo the passphrase, the logs of this image are meant to be shipped somewhere
+                    echo /opt/duplicati/duplicati-server-util import "$file" '<passphrase>' --import-metadata --server-datafolder /data/Duplicati
                     /opt/duplicati/duplicati-server-util import "$file" ${DUPLICATI__WEBSERVICE_PASSWORD} --import-metadata --server-datafolder /data/Duplicati
                     if [ $? -eq 0 ]; then
                         echo "Imported config from $file"
